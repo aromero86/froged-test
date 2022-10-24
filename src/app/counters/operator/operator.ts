@@ -1,16 +1,23 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { CountersService } from '../counters.service';
 
 @Component({
     selector: 'operator',
-    template: `<button (click)="sumar.emit()">Sumar</button> &nbsp; <suboperador (multiplicar)="multiplicar.emit()"></suboperador>`
+    template: `
+        <button (click)="sumar()">Sumar</button>
+        &nbsp;
+        <suboperador></suboperador>`
 })
 
 export class OperatorComponent implements OnInit {
 
-    @Output() sumar = new EventEmitter();
-    @Output() multiplicar = new EventEmitter();
-
-    constructor() { }
+    constructor(
+        public countersService: CountersService,
+    ) { }
 
     ngOnInit() { }
+
+    sumar() {
+        this.countersService.valor1++;
+    }
 }

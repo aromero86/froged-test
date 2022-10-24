@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CountersService } from './counters.service';
 
 @Component({
     selector: 'counters',
@@ -6,19 +7,16 @@ import { Component, OnInit } from '@angular/core';
                     <result #result></result>
                     <br>
                     <br>
-                    <operator
-                        (multiplicar)="result.setValue(2, result.valor1 * result.valor2)"
-                        (sumar)="result.setValue(1, result.valor1+1)"
-                    ></operator>
+                    <operator></operator>
                     &nbsp;
-                    <button (click)="result.clear()">Clear</button>
+                    <button (click)="countersService.clear()">Clear</button>
                 </div>`
 })
 export class CountersComponent implements OnInit {
 
-    constructor() { }
-
-    public valor = 0;
+    constructor(
+        public countersService: CountersService,
+    ) { }
 
     ngOnInit() { }
 }
