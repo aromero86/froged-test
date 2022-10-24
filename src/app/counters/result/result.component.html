@@ -1,5 +1,6 @@
-<span>Counter1: {{ countersService.valor1 }}</span>
+<span>Counter1: {{ countersService.valor1$ | async }}</span>
 <br>
-<span>Counter2: {{ countersService.valor2 }}</span>
+<span>Counter2: {{ countersService.valor2$ | async }}</span>
 <br>
+<span>Counter suma: {{ countersService.valorSumado$ | async }}</span>
 <br>

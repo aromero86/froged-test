@@ -14,7 +14,7 @@ export class SuboperatorComponent implements OnInit {
     ngOnInit() { }
 
     multiplicar(): void {
-        this.countersService.valor2 = this.countersService.valor1 * this.countersService.valor2;
+        this.countersService.multiply();
     }
 
 }

@@ -18,6 +18,6 @@ export class OperatorComponent implements OnInit {
     ngOnInit() { }
 
     sumar() {
-        this.countersService.valor1++;
+        this.countersService.increaseValue1();
     }
 }
