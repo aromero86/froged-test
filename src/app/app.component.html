@@ -1,1 +1,10 @@
 <h1>Welcome</h1>
+<div style="text-align: center">
+    <button (click)="feature='timer'">Feature: Timer</button>
+    &nbsp;
+    <button (click)="feature='hierarchy'">Feature: Parent-children</button>
+</div>
+<div style="margin: 40px;">
+    <timer *ngIf="feature==='timer'"></timer>
+    <counters *ngIf="feature==='hierarchy'"></counters>
+</div>
